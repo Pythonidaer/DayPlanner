@@ -39,7 +39,7 @@ body {
 
 .plan-input textarea {
     width: 100%;
-    background: rgb(125, 218, 125);
+    /* background: rgb(125, 218, 125); */
     padding: 10px;
     margin: 2px 0 0 0;
 }

@@ -9,6 +9,8 @@ let saveIndex;
 let inputIndex;
 let newInput;
 let currentDay = document.getElementById('currentDay');
+let time = 9;
+let hour = dayjs().get('hour');
 
 console.log(dayjs().format('dddd'+ ', ' + 'MMMM' + ' ' + 'DD'));
 currentDay.textContent = dayjs().format('dddd'+ ', ' + 'MMMM' + ' ' + 'DD');
@@ -32,6 +34,7 @@ function renderTimeBlock() {
         hourP.textContent = hourArray[i];
         planDiv.classList.add('plan-input');
         planLabel.setAttribute('for', 'hour');
+        planTextArea.setAttribute('data-hour', time);
         planTextArea.setAttribute('data-index', i);
         planTextArea.setAttribute('name', 'hour');
         planTextArea.classList.add('text-input');
@@ -51,9 +54,32 @@ function renderTimeBlock() {
         saveDiv.append(saveBtn);
         timeBlock.append(saveDiv);
 
+
+        time++;
+
     };
+    pastPresentFuture();
 };
 renderTimeBlock()
+
+/* 
+for each textarea, if its data-hour is less than current hour, add past bg-color grey
+- if the data-set equals the hour exactly, make present hour bg-color red
+- else add future class that is green
+*/
+function pastPresentFuture() {
+    let textarea = document.querySelectorAll('textarea');
+
+    textarea.forEach(function(area) {
+        if (parseInt(area.dataset.hour) < hour) {
+            area.classList.add('past');
+        } else if (parseInt(area.dataset.hour) === hour) {
+            area.classList.add('present');
+        } else {
+            area.classList.add('future');
+        }
+    })
+};
 
 // I am trying to connect the save button to logging the value (if there is any)
 // Maybe I need to add an if condition here if (value) = for loop else (return);
