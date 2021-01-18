@@ -45,19 +45,21 @@ body {
 }
 
 .plan-input ::placeholder {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
     color: black;
 }
 
 .save {
-    background: rgb(64, 228, 228);
+    background-color: #06AED5;
     min-width: 100px;
     border-radius: 0 15px 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: 3px solid white;
+    border-left: 1px solid black;
+    background-color: #06AED5;
+    color: white;
+    transition: all .3s ease-in-out;
 }
 
 button {
@@ -66,13 +68,25 @@ button {
     outline: none;
     border: none;
     padding: 30px;
+    color: white; 
 }
 
-button:hover {
+.save:hover {
     background: rgb(25, 206, 206);
+}
+
+.save:hover .save-icon {
+    font-size: 20px;
 }
 
 .save-icon {
     font-size: 2rem;
+    transition: all .3s ease-in-out;
 }
+
+.save-icon:hover {
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+}
+
  
