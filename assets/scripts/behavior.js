@@ -1,4 +1,126 @@
-console.log('test')
+/*
+Get container, build hours in an array, declare hourInput [], obtain user text Input;
+*/
+let container = document.querySelector('.container');
+let hourArray = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
+let hourInput;
+let userInput;
+let saveIndex;
+let inputIndex;
+let newInput;
+let currentDay = document.getElementById('currentDay');
+
+console.log(dayjs().format('dddd'+ ', ' + 'MMMM' + ' ' + 'DD'));
+currentDay.textContent = dayjs().format('dddd'+ ', ' + 'MMMM' + ' ' + 'DD');
+
+// For each element in the hours array, create a time block
+function renderTimeBlock() {
+    for (let i = 0; i < hourArray.length; i++) {
+        let timeBlock = document.createElement('div');
+        let hourDiv = document.createElement('div');
+        let hourP = document.createElement('p');
+        let planDiv = document.createElement('div');
+        let planLabel = document.createElement('label');
+        let planTextArea = document.createElement('textarea');
+        let saveDiv = document.createElement('div');
+        let saveBtn = document.createElement('button');
+        let saveIcon = document.createElement('i');
+
+        timeBlock.classList.add('time-block');
+        hourDiv.classList.add('hour');
+        hourP.setAttribute('data-index', i);
+        hourP.textContent = hourArray[i];
+        planDiv.classList.add('plan-input');
+        planLabel.setAttribute('for', 'hour');
+        planTextArea.setAttribute('data-index', i);
+        planTextArea.setAttribute('name', 'hour');
+        planTextArea.classList.add('text-input');
+        planTextArea.setAttribute('placeholder', 'Your text here...');
+        saveDiv.classList.add('save');
+        saveBtn.setAttribute('data-index', i);
+        saveBtn.classList.add('saveBtn');
+        saveIcon.classList.add('far', 'fa-save', 'save-icon');
+
+        container.append(timeBlock);
+        hourDiv.append(hourP);
+        timeBlock.append(hourDiv);
+        planDiv.append(planLabel);
+        planDiv.append(planTextArea);
+        timeBlock.append(planDiv);
+        saveBtn.append(saveIcon);
+        saveDiv.append(saveBtn);
+        timeBlock.append(saveDiv);
+
+    };
+};
+renderTimeBlock()
+
+// I am trying to connect the save button to logging the value (if there is any)
+// Maybe I need to add an if condition here if (value) = for loop else (return);
+function dataListener() {
+
+    let button = document.querySelectorAll('.saveBtn');
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function(event) {
+            hourInput = [];
+            
+            saveIndex = parseInt(this.dataset.index);
+            inputIndex = parseInt(this.parentElement.previousSibling.children[1].dataset.index);
+
+            if (saveIndex === inputIndex) {
+                userInput = this.parentElement.previousSibling.children[1].value;
+                if (userInput) {
+                    console.log(userInput);
+                }
+            }
+            
+            setInput();
+            loadInput();
+        });
+    };
+
+    // input.forEach( function(elem) {
+    //     elem.addEventListener('input', function() {
+    //         console.log('test');
+    //     })
+    // })
+    // input.addEventListener('click', function() {
+    //     console.log(this);
+    // })
+};
+dataListener();
+
+// Rushing with this
+function getInput() { 
+    if (localStorage.getItem('hourInput') !== null) {
+        hourInput = JSON.parse(localStorage.getItem('hourInput'));
+    } else {
+        hourInput = [];
+    }; 
+}
+getInput();
+/*
+This currently re-writes whatever gets scored to the newInput object
+I need this to create a new object for each time block;
+This is currently not a scalable solution
+*/
+function setInput() {
+    newInput = {
+        "input": userInput
+    };
+    // console.log(newInput);
+    // console.log(hourInput);
+    hourInput.push(newInput);
+    localStorage.setItem("hourInput", JSON.stringify(hourInput));
+}
+// console.log(hourInput);
+// console.log(hourInput.input);
+function loadInput() {
+    for (let i = 0; i < hourInput.length; i++) {
+        userInput.value = hourInput.input;
+    };
+}
+ 
 
 /*
 What I want to do is watch the .gif

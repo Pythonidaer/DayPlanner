@@ -1,3 +1,78 @@
 body {
-    background: #999999;
+    background: #e07878;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.container {
+    /* background: #efefef; */
+    width: 80%;
+    /* height: 100px; */
+    margin: 0 auto;
+}
+
+/* parent of each time-block: hour, plan-input, save-icon */
+.time-block {
+    display: flex;
+    flex-direction: row;
+    min-height: 100px;
+}
+
+.hour {
+    background: white;
+    border-top: 3px solid black;
+    border-right: 2px solid black;
+    text-align: right;
+    min-width: 100px;
+}
+
+.hour p {
+    margin-top: 0;
+    padding: 10px;
+}
+
+.plan-input {
+    background: white;
+    width: 100%;
+    display: flex;
+    border-top: 1px solid white;
+}
+
+.plan-input textarea {
+    width: 100%;
+    background: rgb(125, 218, 125);
+    padding: 10px;
+    margin: 2px 0 0 0;
+}
+
+.plan-input ::placeholder {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+
+.save {
+    background: rgb(64, 228, 228);
+    min-width: 100px;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid white;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 30px;
+}
+
+button:hover {
+    background: rgb(25, 206, 206);
+}
+
+.save-icon {
+    font-size: 2rem;
+}
+ 
