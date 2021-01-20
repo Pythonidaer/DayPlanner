@@ -81,6 +81,7 @@ function renderTimeBlock() {
         planTextArea.setAttribute('placeholder', 'Your text here...');
         saveDiv.classList.add('save');
         saveBtn.setAttribute('data-index', i);
+        saveBtn.setAttribute('aria-label', 'Save Input');
         saveBtn.classList.add('saveBtn');
         saveIcon.classList.add('far', 'fa-save', 'save-icon');
         container.append(timeBlock);

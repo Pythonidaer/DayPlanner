@@ -1,12 +1,64 @@
 body {
-    background: #e07878;
+    /* background: #e07878; */
+    /* background: #fff; */
+    background: #e9ecef;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    background: #242526;
+    color: #e9ecef;
 }
 
+h1, .lead {
+    color: #e9ecef;
+}
+
+  textarea{
+    background: transparent;
+    border: none;
+    resize: none;
+    color: #000000;
+    border-left: 1px solid black;
+    padding: 10px;
+  }
+  
+  .jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+  }
+ 
+  .hour {
+    background-color: #ffffff;
+    color: #000000;
+    border-top: 1px dashed #000000;
+  }
+  
+  .past {
+    background-color: #d3d3d3;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .present {
+    background-color: #ff6961;
+    color: white;
+  }
+  
+  .future {
+    background-color: #77dd77;
+    color: white;
+  }
+  
+
+
 .container {
-    /* background: #efefef; */
     width: 80%;
-    /* height: 100px; */
     margin: 0 auto;
 }
 
@@ -14,7 +66,8 @@ body {
 .time-block {
     display: flex;
     flex-direction: row;
-    min-height: 100px;
+    white-space: pre-wrap;
+    height: 80px;
 }
 
 .hour {
@@ -39,7 +92,6 @@ body {
 
 .plan-input textarea {
     width: 100%;
-    /* background: rgb(125, 218, 125); */
     padding: 10px;
     margin: 2px 0 0 0;
 }
@@ -72,16 +124,23 @@ button {
 }
 
 #clearBtn {
-    background: #333;
+    background: #d8251c;
     padding: 18px 40px;
     text-transform: uppercase;
     border-radius: 50px;
-    margin-top: 1rem;
+    margin: 1rem;
     transition: all .3s linear;
+    color: #efefef;
+    font-weight: bold;
 }
 
-.clearBtn:hover {
-    background: #555;
+.center-btn {
+    display: flex;
+    justify-content: center; 
+}
+
+#clearBtn:hover {
+    background: #751611;
 }
 
 .save:hover {
@@ -102,4 +161,73 @@ button {
     transition: all .3s ease-in-out;
 }
 
+ /* Test mobile */
+ @media all and (max-width: 500px) {
+    body {
+        margin: 0;
+    }
+
+    .jumbotron {
+        border: 0;
+    }
+
+     .container {
+         width: 100%;
+     }
+
+     .hour {
+        background: white;
+        border-top: 3px solid black;
+        border-right: 2px solid black;
+        text-align: center;
+        min-width: 60px;
+    }
+    button {
+        padding: 0;
+    }
+
+    .save {
+        min-width: 60px;
+        border-radius: 0;
+    }
+
+    .time-block {
+        min-height: 0;
+    }
+
+
+ }
+
+ /* Need an a11y name
+ button.saveBtn
+button.saveBtn
+button.saveBtn
+button.saveBtn
+button.saveBtn
+button.saveBtn
+button.saveBtn
+button.saveBtn
+button.saveBtn
  
+Need associated labels
+textarea.text-input.present
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+
+Background and foreground poor contrast ratio:
+textarea.text-input.present
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+textarea.text-input.future
+ */
