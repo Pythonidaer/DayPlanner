@@ -71,6 +71,19 @@ button {
     color: white; 
 }
 
+#clearBtn {
+    background: #333;
+    padding: 18px 40px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-top: 1rem;
+    transition: all .3s linear;
+}
+
+.clearBtn:hover {
+    background: #555;
+}
+
 .save:hover {
     background: rgb(25, 206, 206);
 }
