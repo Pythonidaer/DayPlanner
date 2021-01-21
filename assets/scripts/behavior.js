@@ -73,10 +73,10 @@ function renderTimeBlock() {
         hourP.setAttribute('data-index', i);
         hourP.textContent = hourArray[i];
         planDiv.classList.add('plan-input');
-        planLabel.setAttribute('for', 'hour');
+        planLabel.setAttribute('for', 'hour-' + dataHour);
         planTextArea.setAttribute('data-hour', dataHour);
         planTextArea.setAttribute('data-index', i);
-        planTextArea.setAttribute('name', 'hour');
+        planTextArea.setAttribute('id', 'hour-' + dataHour);
         planTextArea.classList.add('text-input');
         planTextArea.setAttribute('placeholder', 'Your text here...');
         saveDiv.classList.add('save');
