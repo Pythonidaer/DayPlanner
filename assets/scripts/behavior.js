@@ -88,7 +88,7 @@ function renderTimeBlock() {
         hourDiv.append(hourP);
         timeBlock.append(hourDiv);
         planDiv.append(planLabel);
-        planDiv.append(planTextArea);
+        planLabel.append(planTextArea);
         timeBlock.append(planDiv);
         saveBtn.append(saveIcon);
         saveDiv.append(saveBtn);

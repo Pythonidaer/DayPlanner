@@ -1,6 +1,4 @@
 body {
-    /* background: #e07878; */
-    /* background: #fff; */
     background: #e9ecef;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
@@ -15,48 +13,54 @@ h1, .lead {
     color: #e9ecef;
 }
 
-  textarea{
-    background: transparent;
-    border: none;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
+textarea{
+background: transparent;
+border: none;
+resize: none;
+color: #000000;
+border-left: 1px solid black;
+padding: 10px;
+}
+  
+.jumbotron {
+text-align: center;
+background-color: transparent;
+color: black;
+border-radius: 0;
+border-bottom: 10px solid black;
+}
+
+.hour {
+background-color: #fff;
+color: #000000;
+border-top: 1px dashed #000000;
+border-right: 2px solid black;
+text-align: right;
+min-width: 100px;
+}
+
+.hour p {
+    margin-top: 0;
     padding: 10px;
-  }
-  
-  .jumbotron {
-    text-align: center;
-    background-color: transparent;
-    color: black;
-    border-radius: 0;
-    border-bottom: 10px solid black;
-  }
- 
-  .hour {
-    background-color: #ffffff;
-    color: #000000;
-    border-top: 1px dashed #000000;
-  }
-  
-  .past {
-    background-color: #d3d3d3;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
-    color: black;
-  }
-  
-  .present {
-    background-color: #ff6961;
-    color: white;
-  }
-  
-  .future {
-    background-color: #77dd77;
-    color: white;
-  }
-  
+}
 
+.past {
+background-color: #d3d3d3;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+/* font-size: 1rem; */
+color: black;
+}
 
+.present {
+background-color: #ff6961;
+color: white;
+}
+
+.future {
+background-color: #77dd77;
+color: white;
+}
+  
 .container {
     width: 80%;
     margin: 0 auto;
@@ -67,20 +71,7 @@ h1, .lead {
     display: flex;
     flex-direction: row;
     white-space: pre-wrap;
-    height: 80px;
-}
-
-.hour {
-    background: white;
-    border-top: 3px solid black;
-    border-right: 2px solid black;
-    text-align: right;
-    min-width: 100px;
-}
-
-.hour p {
-    margin-top: 0;
-    padding: 10px;
+    min-height: 80px;
 }
 
 .plan-input {
@@ -90,10 +81,15 @@ h1, .lead {
     border-top: 1px solid white;
 }
 
+label {
+    width: 100%;
+}
+
 .plan-input textarea {
     width: 100%;
     padding: 10px;
-    margin: 2px 0 0 0;
+    min-height: 80px;
+    outline: none;
 }
 
 .plan-input ::placeholder {
@@ -107,7 +103,7 @@ h1, .lead {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 3px solid white;
+    border-top: 1px dashed black;
     border-left: 1px solid black;
     background-color: #06AED5;
     color: white;
@@ -124,13 +120,14 @@ button {
 }
 
 #clearBtn {
-    background: #d8251c;
+    background: #EAA39A;
     padding: 18px 40px;
+    font-size: 1.2rem;
     text-transform: uppercase;
     border-radius: 50px;
     margin: 1rem;
     transition: all .3s linear;
-    color: #efefef;
+    color: #444;
     font-weight: bold;
 }
 
@@ -141,6 +138,7 @@ button {
 
 #clearBtn:hover {
     background: #751611;
+    color: #efefef;
 }
 
 .save:hover {
@@ -177,7 +175,7 @@ button {
 
      .hour {
         background: white;
-        border-top: 3px solid black;
+        border-top: 1px solid black;
         border-right: 2px solid black;
         text-align: center;
         min-width: 60px;
@@ -198,18 +196,7 @@ button {
 
  }
 
- /* Need an a11y name
- button.saveBtn
-button.saveBtn
-button.saveBtn
-button.saveBtn
-button.saveBtn
-button.saveBtn
-button.saveBtn
-button.saveBtn
-button.saveBtn
- 
-Need associated labels
+ /*Need associated labels
 textarea.text-input.present
 textarea.text-input.future
 textarea.text-input.future
@@ -221,13 +208,5 @@ textarea.text-input.future
 textarea.text-input.future
 
 Background and foreground poor contrast ratio:
-textarea.text-input.present
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
+button#clearBtn
  */
