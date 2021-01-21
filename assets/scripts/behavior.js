@@ -77,6 +77,7 @@ function renderTimeBlock() {
         planTextArea.setAttribute('data-hour', dataHour);
         planTextArea.setAttribute('data-index', i);
         planTextArea.setAttribute('id', 'hour-' + dataHour);
+        planTextArea.setAttribute('aria-labelledby', 'hour-' + dataHour);
         planTextArea.classList.add('text-input');
         planTextArea.setAttribute('placeholder', 'Your text here...');
         saveDiv.classList.add('save');
