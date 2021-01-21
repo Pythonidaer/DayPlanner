@@ -62,7 +62,7 @@ function renderTimeBlock() {
         let timeBlock = document.createElement('div');
         let hourDiv = document.createElement('div');
         let hourP = document.createElement('p');
-        let planDiv = document.createElement('div');
+        let formDiv = document.createElement('form');
         let planLabel = document.createElement('label');
         let planTextArea = document.createElement('textarea');
         let saveDiv = document.createElement('div');
@@ -72,7 +72,7 @@ function renderTimeBlock() {
         hourDiv.classList.add('hour');
         hourP.setAttribute('data-index', i);
         hourP.textContent = hourArray[i];
-        planDiv.classList.add('plan-input');
+        formDiv.classList.add('plan-input');
         planLabel.setAttribute('for', 'hour-' + dataHour);
         planTextArea.setAttribute('data-hour', dataHour);
         planTextArea.setAttribute('data-index', i);
@@ -87,9 +87,9 @@ function renderTimeBlock() {
         container.append(timeBlock);
         hourDiv.append(hourP);
         timeBlock.append(hourDiv);
-        planDiv.append(planLabel);
+        formDiv.append(planLabel);
         planLabel.append(planTextArea);
-        timeBlock.append(planDiv);
+        timeBlock.append(formDiv);
         saveBtn.append(saveIcon);
         saveDiv.append(saveBtn);
         timeBlock.append(saveDiv);
