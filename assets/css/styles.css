@@ -1,5 +1,5 @@
+/* General styling */
 body {
-    background: #e9ecef;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     line-height: 1;
@@ -12,7 +12,7 @@ body {
 h1, .lead {
     color: #e9ecef;
 }
-
+/* Class supplied styles */
 textarea{
 background: transparent;
 border: none;
@@ -39,23 +39,27 @@ text-align: right;
 min-width: 100px;
 }
 
+/* Spacing for numbers to be to closer to the textarea */
 .hour p {
     margin-top: 0;
     padding: 10px;
 }
 
+/* Styles for hours that are earlier than the current time of day (so present time makes them in the past) */
 .past {
 background-color: #d3d3d3;
 font-family:Verdana, Geneva, Tahoma, sans-serif;
-/* font-size: 1rem; */
 color: black;
 }
 
+/* Style for current time block that is equal to the current hour of the day (in military time) */
 .present {
 background-color: #ff6961;
 color: white;
 }
 
+/* Styles for hours that are later than the current hour, but are within the range of 9am-5pm */
+/* Have not tested outside of my time EST */
 .future {
 background-color: #77dd77;
 color: white;
@@ -81,6 +85,7 @@ color: white;
     border-top: 1px solid white;
 }
 
+/* Potential future change: add a class to display:none text and make it only for screen readers */
 label {
     width: 100%;
 }
@@ -110,13 +115,17 @@ label {
     transition: all .3s ease-in-out;
 }
 
-button {
+button.saveBtn {
     background: transparent;
+    width: 100%;
+    height: 100%;
+    color: white; 
+}
+
+.saveBtn, #clearBtn {
     cursor: pointer;
     outline: none;
     border: none;
-    padding: 30px;
-    color: white; 
 }
 
 #clearBtn {
@@ -130,22 +139,25 @@ button {
     color: #444;
     font-weight: bold;
 }
-
+/* centers clear button below the time blocks */
 .center-btn {
     display: flex;
     justify-content: center; 
 }
 
-#clearBtn:hover {
+#clearBtn:hover,
+#clearBtn:focus {
     background: #751611;
-    color: #efefef;
+    color: #efefef;     
 }
 
-.save:hover {
+.save:hover,
+.save:focus {
     background: rgb(25, 206, 206);
 }
 
-.save:hover .save-icon {
+.save:hover .save-icon,
+.save:focus .save-icon {
     font-size: 20px;
 }
 
@@ -154,17 +166,14 @@ button {
     transition: all .3s ease-in-out;
 }
 
-.save-icon:hover {
+.save-icon:hover,
+.save-icon:focus {
     font-size: 20px;
     transition: all .3s ease-in-out;
 }
 
  /* Test mobile */
  @media all and (max-width: 500px) {
-    body {
-        margin: 0;
-    }
-
     .jumbotron {
         border: 0;
     }
@@ -180,33 +189,9 @@ button {
         text-align: center;
         min-width: 60px;
     }
-    button {
-        padding: 0;
-    }
 
     .save {
         min-width: 60px;
         border-radius: 0;
     }
-
-    .time-block {
-        min-height: 0;
-    }
-
-
  }
-
- /*Need associated labels
-textarea.text-input.present
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-textarea.text-input.future
-
-Background and foreground poor contrast ratio:
-button#clearBtn
- */
