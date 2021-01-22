@@ -70,9 +70,9 @@ This repo is simply a homework assignment. Feel free to inspect the code and not
 ## Future Improvements
 In class, Scott (our instructor) showed us how to create a text-less HTML template in the HTML file, then .clone() it with jQuery. Ultimately, I think my DayPlanner doesn't ace Lighthouse accessibility rankings because it doesn't read the textarea within the label until after it's rendered onto the page. There are still some JavaScript alternatives (ahem - hacks) I could try, such as adding textContent to the label, along with a class that hides the label, but I think reviewing .clone() in the future will be a better, more practical approach.
 
-I would also like to make this assignment less ugly. This product is meant to display JavaScript, not be displayed in an art gallery. One immediate change I can think of is to remove the button 'Clear All' button, and to add a delete icon beside each save icon in the right side of the planner.  The main functionality difference there would be the button needing to target the local storage of a specific array within the localStorage object, as opposed to the entire array.
+I would also like to make this assignment less ugly. This product is meant to display JavaScript, not be displayed in an art gallery. One immediate change I can think of is to remove the 'Clear All' button, and to add a delete/trash icon beside each save/floppy disk icon in the right side of the planner.  The main functionality difference there would be the button needing to target a specific array item within the localStorage object, as opposed to the entire array.
 
-Lastly, I had initially planned to refactor this in Bulma. However, since we are focusing so much on jQuery and already rushing into APIs, I want to focus on refactoring this code into jQuery so that learning APIs is easier in class. Once I finish converting this vanilla js to jQuery, I will delete this note.
+Lastly, I had initially planned to refactor this in the CSS Framework Bulma. However, since we are focusing so much on jQuery and already rushing into APIs, I want to focus on refactoring this code into jQuery so that learning APIs is easier in class. Once I finish converting this vanilla js to jQuery, I will delete this note.
   
 ## License
 I've chosen an MIT License. Do what you'd like with this material.
