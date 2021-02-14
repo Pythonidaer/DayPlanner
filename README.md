@@ -80,3 +80,6 @@ I've chosen an MIT License. Do what you'd like with this material.
 #### The Website
 ![Daily Planner](assets/images/screenshot.png)
 ![Lighthouse Rankings](assets/images/lighthouse.png)
+
+## Contact:
+You can email me at codefolio.work@gmail.com
